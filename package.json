@@ -1,0 +1,20 @@
+{
+  "name": "md-to-pdf-server",
+  "version": "1.0.0",
+  "description": "Markdown server for converting Markdown files to PDF using md-to-pdf",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "markdown",
+    "pdf",
+    "converter"
+  ],
+  "author": "Ashter",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "md-to-pdf": "^5.2.4"
+  }
+}

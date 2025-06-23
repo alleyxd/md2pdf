@@ -1,0 +1,342 @@
+/* General body styling */
+body {
+  font-family: "Inter", sans-serif;
+}
+
+/* Base styles for the preview pane content */
+.preview-pane {
+  font-size: 16px;
+  line-height: 1.6;
+}
+.preview-pane h1,
+.preview-pane h2,
+.preview-pane h3,
+.preview-pane h4,
+.preview-pane h5,
+.preview-pane h6 {
+  margin-top: 20px;
+  margin-bottom: 12px;
+  font-weight: 600;
+  line-height: 1.25;
+  padding-bottom: 0.2em;
+}
+.preview-pane h1 {
+  font-size: 2em;
+}
+.preview-pane h2 {
+  font-size: 1.5em;
+}
+.preview-pane h3 {
+  font-size: 1.25em;
+}
+.preview-pane p {
+  margin-bottom: 12px;
+}
+.preview-pane a {
+  text-decoration: none;
+}
+/* --- FIXED LIST STYLES --- */
+.preview-pane ul,
+.preview-pane ol {
+  padding-left: 2em;
+  margin-bottom: 12px;
+  list-style-position: outside;
+}
+.preview-pane ul {
+  list-style-type: disc;
+}
+.preview-pane ol {
+  list-style-type: decimal;
+}
+.preview-pane li {
+  margin-bottom: 0.25em;
+}
+/* --- END OF FIX --- */
+.preview-pane blockquote {
+  padding: 0 1em;
+  margin: 0 0 12px 0;
+  border-left-width: 0.25em;
+}
+.preview-pane code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
+    monospace;
+  font-size: 85%;
+  padding: 0.2em 0.4em;
+  border-radius: 6px;
+}
+.preview-pane pre {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
+    monospace;
+  font-size: 85%;
+  line-height: 1.45;
+  overflow: auto;
+  padding: 28px 16px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+}
+.preview-pane pre code {
+  padding: 0;
+  background: none;
+}
+.preview-pane table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 12px;
+}
+.preview-pane td {
+  padding: 16px 12px;
+  border-width: 1px;
+}
+.preview-pane th {
+  border-width: 1px;
+  font-weight: 600;
+  padding: 8px 12px;
+}
+.preview-pane hr {
+  border: 0;
+  height: 0.25em;
+  padding: 0;
+  margin: 20px 0;
+}
+
+/* Light Theme for Live Preview */
+.theme-light-preview {
+  color: #24292e;
+}
+.theme-light-preview h1,
+.theme-light-preview h2,
+.theme-light-preview h3 {
+  border-bottom-color: #eaecef;
+}
+.theme-light-preview a {
+  color: #0366d6;
+}
+.theme-light-preview blockquote {
+  border-left-color: #dfe2e5;
+  color: #6a737d;
+}
+.theme-light-preview code {
+  background-color: rgba(27, 31, 35, 0.05);
+}
+.theme-light-preview pre {
+  background-color: #f6f8fa;
+}
+.theme-light-preview table,
+.theme-light-preview th,
+.theme-light-preview td {
+  border-color: #dfe2e5;
+}
+.theme-light-preview th {
+  background-color: #f6f8fa;
+}
+.theme-light-preview hr {
+  background-color: #e1e4e8;
+}
+
+/* Academic Theme Preview */
+.theme-academic-preview {
+  font-family: "Lora", serif;
+  color: #333;
+}
+.theme-academic-preview h1,
+.theme-academic-preview h2,
+.theme-academic-preview h3 {
+  font-family: "Lora", serif;
+}
+.theme-academic-preview a {
+  color: #0056b3;
+  border-bottom: 1px dotted;
+}
+.theme-academic-preview blockquote {
+  border-left-color: #ccc;
+  color: #666;
+  font-style: italic;
+}
+.theme-academic-preview code {
+  color: #c0392b;
+  background-color: #f5f2f0;
+}
+.theme-academic-preview pre {
+  background-color: #f5f2f0;
+  border: 1px solid #ddd;
+}
+.theme-academic-preview th {
+  background-color: #f5f2f0;
+}
+.theme-academic-preview hr {
+  background-color: #ccc;
+  height: 1px;
+}
+
+/* Swiss Theme Preview */
+.theme-swiss-preview {
+  color: #111;
+  font-family: "Helvetica", sans-serif;
+}
+.theme-swiss-preview h1 {
+  border-bottom: 2px solid #111;
+}
+.theme-swiss-preview h3 {
+  border-bottom: none;
+}
+.theme-swiss-preview a {
+  color: #d60303;
+  font-weight: bold;
+}
+.theme-swiss-preview blockquote {
+  border-left-color: #d60303;
+}
+.theme-swiss-preview code,
+.theme-swiss-preview pre {
+  background-color: #f0f0f0;
+}
+.theme-swiss-preview table,
+.theme-swiss-preview th,
+.theme-swiss-preview td {
+  border: 1px solid #111;
+}
+.theme-swiss-preview th {
+  background-color: #111;
+  color: #fff;
+}
+.theme-swiss-preview hr {
+  height: 2px;
+  background-color: #111;
+}
+
+/* Blueprint Theme Preview */
+.theme-blueprint-preview {
+  color: #222;
+}
+.theme-blueprint-preview h1 {
+  border-bottom: 1px solid #00449e;
+}
+.theme-blueprint-preview h1,
+.theme-blueprint-preview h2,
+.theme-blueprint-preview h3 {
+  font-family: "Roboto Mono", monospace;
+  color: #00449e;
+}
+.theme-blueprint-preview a {
+  color: #0056b3;
+  text-decoration: underline dotted;
+}
+.theme-blueprint-preview blockquote {
+  border-left-color: #a3daff;
+  background: #f0f8ff;
+  color: #3d5a80;
+}
+.theme-blueprint-preview code,
+.theme-blueprint-preview pre {
+  font-family: "Fira Code", monospace;
+  background-color: #eef3f7;
+  color: #00449e;
+}
+.theme-blueprint-preview pre {
+  border: 1px solid #a3daff;
+}
+.theme-blueprint-preview table,
+.theme-blueprint-preview th,
+.theme-blueprint-preview td {
+  border-color: #a3daff;
+}
+.theme-blueprint-preview th {
+  background-color: #00449e;
+  color: #fff;
+}
+.theme-blueprint-preview hr {
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 68, 158, 0),
+    rgba(0, 68, 158, 0.75),
+    rgba(0, 68, 158, 0)
+  );
+}
+
+/* Forest Theme Preview */
+.theme-forest-preview {
+  color: #3a3a3a;
+}
+.theme-forest-preview h1 {
+  border-bottom: 1px solid #97bc62ff;
+}
+.theme-forest-preview h1,
+.theme-forest-preview h2,
+.theme-forest-preview h3 {
+  font-family: "Lora", serif;
+  color: #2c5f2d;
+}
+.theme-forest-preview a {
+  color: #556b2f;
+  font-weight: 600;
+}
+.theme-forest-preview blockquote {
+  border-left-color: #97bc62ff;
+  background-color: #f4f7f0;
+  color: #5a8a5a;
+}
+.theme-forest-preview code,
+.theme-forest-preview pre {
+  background-color: #e8ede3;
+  color: #2c5f2d;
+}
+.theme-forest-preview pre {
+  border: 1px solid #c9d4b7;
+}
+.theme-forest-preview table,
+.theme-forest-preview th,
+.theme-forest-preview td {
+  border-color: #c9d4b7;
+}
+.theme-forest-preview th {
+  background-color: #2c5f2d;
+  color: #fff;
+}
+.theme-forest-preview hr {
+  background-color: #97bc62ff;
+  height: 1px;
+}
+
+/* Plum Theme Preview */
+.theme-plum-preview {
+  color: #3d3d4d;
+}
+.theme-plum-preview h1 {
+  border-bottom: 2px solid #c197d2;
+}
+.theme-plum-preview h1,
+.theme-plum-preview h2,
+.theme-plum-preview h3 {
+  color: #4c3b4d;
+}
+.theme-plum-preview a {
+  color: #6a4c9c;
+  font-weight: 600;
+}
+.theme-plum-preview blockquote {
+  border-left-color: #c197d2;
+  background-color: #f7f5f9;
+  color: #6a5a6a;
+}
+.theme-plum-preview code,
+.theme-plum-preview pre {
+  background-color: #f2eef7;
+  color: #6a4c9c;
+}
+.theme-plum-preview pre {
+  border-left: 3px solid #6a4c9c;
+}
+.theme-plum-preview table,
+.theme-plum-preview th,
+.theme-plum-preview td {
+  border-color: #e0d8e5;
+}
+.theme-plum-preview th {
+  background-color: #4c3b4d;
+  color: #fff;
+}
+.theme-plum-preview hr {
+  background-color: #c197d2;
+  height: 1px;
+}
