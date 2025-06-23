@@ -3,7 +3,8 @@ const { mdToPdf } = require('md-to-pdf');
 const path = require('path');
 
 const app = express();
-const port = 3000;
+// Use the PORT environment variable provided by Render, with a fallback for local development
+const port = process.env.PORT || 3000;
 
 app.use(express.json({ limit: '20mb' }));
 app.use(express.static('public'));
@@ -25,8 +26,10 @@ app.post('/generate-pdf', async (req, res) => {
         const pdf = await mdToPdf(
             { content: markdown },
             {
+                // Stylesheet for the PDF
                 stylesheet: [cssPath],
-                // PDF options for better layout and to enable features
+
+                // PDF layout options
                 pdf_options: {
                     format: 'A4',
                     margin: {
@@ -35,11 +38,20 @@ app.post('/generate-pdf', async (req, res) => {
                         bottom: '0.25in',
                         left: '0.5in',
                     },
-                    printBackground: true, // Important for themes with background colors
+                    printBackground: true,
                 },
-                // Launch options for the headless browser to ensure stability
+
+                // --- CRUCIAL RENDER DEPLOYMENT OPTIONS ---
+                // Tell Puppeteer where to find the Chromium binary installed by the Dockerfile.
+                executablePath: '/usr/bin/chromium',
+                
+                // Add required arguments for running in a sandboxed, containerized environment.
                 launch_options: {
-                  args: ['--no-sandbox', '--disable-setuid-sandbox'],
+                    args: [
+                        '--no-sandbox',
+                        '--disable-setuid-sandbox',
+                        '--disable-dev-shm-usage'
+                    ],
                 },
             }
         );
@@ -64,5 +76,6 @@ app.get('/', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Markdown to PDF server listening at http://localhost:${port}`);
+    // The 0.0.0.0 is important for Render to bind correctly
+    console.log(`Markdown to PDF server listening on port ${port}`);
 });
