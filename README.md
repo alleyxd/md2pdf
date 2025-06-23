@@ -19,11 +19,3 @@ A simple, client-side web application to convert your Markdown files into beauti
 3.  **Select a Theme:** Choose your desired style from the "Select a Theme" dropdown menu.
 4.  **Preview Page Breaks (Optional):** Check the "Show Page Breaks" box to visualize where pages will end.
 5.  **Download PDF:** Click the "Download PDF" button to generate and save your document.
-
-## Contributing
-
-Contributions are welcome! If you have ideas for new features, themes, or improvements, feel free to open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
