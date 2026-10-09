@@ -1,21 +1,50 @@
 # MD2PDF
 
-> Professional PDF Documents from Simple Markdown.
+Write Markdown on the left, see it styled on the right, download a clean PDF.
 
-A simple, client-side web application to convert your Markdown files into beautifully styled PDFs with a live preview.
+**Live demo: [md2pdf-2n1z.onrender.com](https://md2pdf-2n1z.onrender.com)** (free hosting, so the first load after a
+quiet period can take up to a minute while the server wakes up)
 
 ## Features
 
-* **Live Preview:** See your rendered HTML update in real-time as you type.
-* **Multiple Themes:** Choose from 6 professional themes (Light, Academic, Swiss, Blueprint, Forest, Plum).
-* **Page Break Preview:** Toggle a page break overlay to see how your document will be paginated.
-* **Direct Download:** Generate and download your PDF directly from the browser.
-* **Responsive Design:** Works smoothly on both desktop and mobile devices.
+- **Live preview** that updates as you type.
+- **Seven themes:** Light, Academic, Swiss, Blueprint, Forest, Plum and Resume.
+- **Compact mode** for tighter spacing, handy for one-page documents and CVs.
+- **Page-break preview** to see where pages will end before you download.
+- **Real PDF output:** rendered server-side by headless Chromium, so text stays selectable and links stay clickable.
 
-## How to Use
+## How it works
 
-1.  **Open the Application:** Navigate to the `index.html` file in your browser.
-2.  **Write or Paste Markdown:** Use the left-hand editor to write or paste your Markdown content. The live preview on the right will update automatically.
-3.  **Select a Theme:** Choose your desired style from the "Select a Theme" dropdown menu.
-4.  **Preview Page Breaks (Optional):** Check the "Show Page Breaks" box to visualize where pages will end.
-5.  **Download PDF:** Click the "Download PDF" button to generate and save your document.
+The front end (`public/`) renders the Markdown preview in the browser and applies the selected theme. When you click
+Download, it posts the Markdown, theme and compact setting to `POST /generate-pdf`. The Express server (`server.js`)
+converts it with [md-to-pdf](https://github.com/simonhaenisch/md-to-pdf), which drives headless Chromium through
+Puppeteer, using the same theme stylesheet, and streams back an A4 PDF. Only known theme names are accepted, so the
+request cannot point the renderer at arbitrary files.
+
+## Run it locally
+
+With Docker (the same image the demo runs on):
+
+```bash
+docker build -t md2pdf .
+docker run -p 3000:3000 md2pdf
+# open http://localhost:3000
+```
+
+The Docker image installs Chromium and fonts for many scripts (including CJK and Thai), and the server is set up to
+use that Chromium. Running without Docker needs Node 18+ and a Chromium at `/usr/bin/chromium`, so Docker is the
+easier route.
+
+## Deploy
+
+The repository deploys as-is to any host that builds a Dockerfile (the demo uses Render). The server listens on the
+`PORT` environment variable, defaulting to 3000.
+
+## Adding a theme
+
+Add `public/themes/<name>.css`, add the name to the theme selector in `public/index.html`, and add it to the
+`allowedThemes` list in `server.js`.
+
+## License
+
+MIT

@@ -1,7 +1,7 @@
 {
-  "name": "md-to-pdf-server",
+  "name": "md2pdf",
   "version": "1.0.0",
-  "description": "Markdown server for converting Markdown files to PDF using md-to-pdf",
+  "description": "Markdown to PDF converter with live preview and themes",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
@@ -11,8 +11,8 @@
     "pdf",
     "converter"
   ],
-  "author": "Ashter",
-  "license": "ISC",
+  "author": "Ali Ashter",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.19.2",
     "md-to-pdf": "^5.2.4"
