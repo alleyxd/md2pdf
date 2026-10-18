@@ -1,6 +1,7 @@
 const express = require('express');
 const { mdToPdf } = require('md-to-pdf');
 const path = require('path');
+const { safeOptions } = require('./safe');
 
 const app = express();
 // Use the PORT environment variable provided by Render, with a fallback for local development
@@ -27,6 +28,9 @@ app.post('/generate-pdf', async (req, res) => {
         const pdf = await mdToPdf(
             { content: markdown },
             {
+                // Empty basedir, no front-matter config, and no raw HTML that embeds or loads content
+                ...safeOptions,
+
                 // Stylesheet for the PDF
                 stylesheet: compact ? [cssPath, compactCssPath] : [cssPath],
 
