@@ -1,5 +1,7 @@
 # MD2PDF
 
+[![tests](https://github.com/alleyxd/md2pdf/actions/workflows/tests.yml/badge.svg)](https://github.com/alleyxd/md2pdf/actions/workflows/tests.yml)
+
 Write Markdown on the left, see it styled on the right, download a clean PDF.
 
 **Live demo: [md2pdf-2n1z.onrender.com](https://md2pdf-2n1z.onrender.com)** (free hosting, so the first load after a
