@@ -4,7 +4,8 @@
   "description": "Markdown to PDF converter with live preview and themes",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "node --test test/"
   },
   "keywords": [
     "markdown",
